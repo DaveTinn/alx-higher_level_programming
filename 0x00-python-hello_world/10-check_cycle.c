@@ -7,9 +7,22 @@
  */
 int check_cycle(listint_t *list)
 {
-        listint_t head_Node;
+        listint_t *cycle, *no_cycle;
 
-        if (head_Node == NULL)
+	cycle = list->next;
+	no_cycle = list->next->next;
+        if (list == NULL || list->next == NULL)
         {
-                return (1);
+                return (0);
         }
+	while (cycle != NULL && no_cycle != NULL)
+	{
+		if (cycle == no_cycle)
+		{
+			return (1);
+		}
+		cycle = cycle->next;
+		no_cycle = no_cycle->next->next;
+	}
+	return (0);
+}

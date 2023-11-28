@@ -7,14 +7,14 @@
  */
 int check_cycle(listint_t *list)
 {
-        listint_t *cycle, *no_cycle;
+	listint_t *cycle, *no_cycle;
 
 	cycle = list->next;
 	no_cycle = list->next->next;
-        if (list == NULL || list->next == NULL)
-        {
-                return (0);
-        }
+	if (list == NULL || list->next == NULL)
+	{
+		return (0);
+	}
 	while (cycle != NULL && no_cycle != NULL)
 	{
 		if (cycle == no_cycle)

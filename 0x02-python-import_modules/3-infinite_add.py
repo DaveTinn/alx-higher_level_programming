@@ -11,6 +11,7 @@ def add_argmt(argv):
             index += 1
         print("{:d}".format(result))
 
+
 if __name__ == "__main__":
     import sys
     add_argmt(sys.argv)

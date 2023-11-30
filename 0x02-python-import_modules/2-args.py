@@ -6,9 +6,9 @@ if __name__ == "__main__":
     if num_of_elements > 1:
         print("{} arguments:".format(num_of_elements))
         for index in range(1, num_of_elements + 1):
-            print("{}: {}".format(num_of_elements, argmt[index]))
+            print("{}: {}".format(index, argmt[index]))
     elif num_of_elements == 0:
         print("{} arguments.".format(num_of_elements))
     else:
-        print("{} arguments:".format(num_of_elements))
+        print("{} argument:".format(num_of_elements))
         print("{}: {}".format(num_of_elements, argmt[1]))

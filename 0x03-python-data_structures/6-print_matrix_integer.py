@@ -3,6 +3,7 @@ def print_matrix_integer(matrix=[[]]):
     if not matrix:
         return None
     for matrix_of_int in matrix:
-        for print_matrix in matrix_of_int:
-            print("{:d}".format(print_matrix), end=" ")
-        print()
+        if len(matrix_of_int) != 0:
+            for idx in range(len(matrix_of_int)):
+                print("{:d}".format(matrix_of_int[idx]), end=" ")
+            print()

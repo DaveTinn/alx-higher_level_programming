@@ -7,6 +7,6 @@ def magic_calculation(a, b):
                 raise Exception("Not in range")
             magic_result += a ** b / idx
         except Exception:
-            magic_result = b + a
+            magic_result += b + a
             break
     return magic_result

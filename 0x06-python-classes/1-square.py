@@ -11,4 +11,4 @@ class Square:
         Variables:
             size: size of the instance attribute.
         '''
-        self.new_size = size
+        self.__size = size

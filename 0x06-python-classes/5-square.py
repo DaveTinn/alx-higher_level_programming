@@ -42,6 +42,7 @@ class Square:
 
     def my_print(self):
         '''Prints the square with a character.'''
+
         for idx in range(self.size):
             for x in range(self.size):
                 print("#", end="\n" if x is self.size - 1 and idx != x else "")

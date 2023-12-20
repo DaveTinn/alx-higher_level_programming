@@ -13,6 +13,7 @@ class Square:
             position: position of the isquare.
         Raise:
             TypeError: if size is not an integer.
+            TypeError: if not a tuple of two positive integers
             ValueError: size is less than zero.
         '''
         self.size = size
@@ -39,10 +40,7 @@ class Square:
 
     @position.setter
     def position(self, value):
-        '''Property setter to set the position of instance attribute.
-        Raise:
-            TypeError: if not a tuple of two positive integers
-        '''
+        '''Property setter to set the position of instance attribute.'''
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(dgt, int) for dgt in value) or

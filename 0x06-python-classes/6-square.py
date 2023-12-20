@@ -29,7 +29,7 @@ class Square:
         '''Property setter to set the size of instance attribute.'''
         if not isinstance(value, int):
             raise TypeError('size must be an integer')
-        if value < 0:
+        elif value < 0:
             raise ValueError('size must be >= 0')
         self.__size = value
 

@@ -45,4 +45,4 @@ class Square:
         for idx in range(self.size):
             for x in range(self.size):
                 print("#", end="\n" if x is self.size - 1 and idx != x else "")
-            print()
+        print()

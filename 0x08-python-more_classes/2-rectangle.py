@@ -14,7 +14,7 @@ class Rectangle:
 
         Raise:
             TypeError: width must be an integer
-            ValueError: widt must be >= 0
+            ValueError: width must be >= 0
         """
 
         self.__height = height

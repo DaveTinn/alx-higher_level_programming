@@ -108,8 +108,5 @@ class Rectangle:
         Arguments:
             cls: The class
             size: The size of the square
-
-        Returns:
-            Rectangle: a new Rectangle representing a square
         """
         return cls(size, size)

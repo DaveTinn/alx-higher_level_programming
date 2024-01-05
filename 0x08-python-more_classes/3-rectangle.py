@@ -32,7 +32,7 @@ class Rectangle:
             raise TypeError('width must be an integer')
         if value < 0:
             raise ValueError('width must be >= 0')
-        self.__width =  value
+        self.__width = value
 
     @property
     def height(self):
@@ -56,12 +56,12 @@ class Rectangle:
         """Retrieves the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return 2 * (self.__width * self.__height)
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
         """Returns a string representation of the Rectangle."""
         rectangle_string = ""
         if self.__width != 0 or self.__height != 0:
-            rectangle_string += '\n'.join('#' * self.__width
-                                        for i in range(self.__height))
-            return rectangle_string
+            rectangle_string += '\n'.join(
+                    '#' * self.__width for idx in range(self.__height))
+        return rectangle_string

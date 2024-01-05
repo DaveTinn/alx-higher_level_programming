@@ -6,15 +6,15 @@ class Rectangle:
     """Defines a type Rectangle."""
 
     def __init__(self, width=0, height=0):
-        """Instantiating an instance of a class
+        """Instantiating an instance of a class Rectangle.
 
-        Variables:
+        Arguments:
             width: width of the Rectangle
             height: height of the Rectangle
 
-        Raise:
-            TypeError: width must be an integer
-            ValueError: width must be >= 0
+        Raises:
+            TypeError: If width or height of the Rectangle is not an integer
+            ValueError: If width or height of the Rectangle is less than 0
         """
 
         self.__height = height

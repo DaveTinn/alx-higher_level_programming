@@ -8,7 +8,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """Instantiating an instance of a class Rectangle.
 
-        Variables:
+        Arguments:
             width: width of a Rectangle
             height: height of a Rectangle
 

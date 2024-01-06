@@ -106,7 +106,6 @@ class Rectangle:
         Instantiating a new Rectangle representing a square.
 
         Arguments:
-            cls: The class
             size: The size of the square
         """
         return cls(size, size)

@@ -7,8 +7,8 @@ class MyInt(int):
 
     def __EqualTo__(self, invert):
         """Defines the equal == operator."""
-        return super().__NotEqual__(invert)
+        return int(self) != invert
 
     def __NotEqual__(self, invert):
         """Defines the not equal != operator."""
-        return super().__EqualTo__(invert)
+        return int(self) == invert

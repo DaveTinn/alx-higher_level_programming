@@ -5,9 +5,9 @@
 class MyInt(int):
     """Instantiating a class inheritance."""
 
-    def __new__(cls, *argmts, **k_argmts):
+    def __new__(cls, *args, **kwargs):
         """"Defines the new instance of the class."""
-        return super(MyInt, cls).__new__(cls, *argmts, **k_argmts)
+        return super(MyInt, cls).__new__(cls, *args, **kwargs)
 
     def __eq__(self, invert):
         """Defines the equal == operator."""

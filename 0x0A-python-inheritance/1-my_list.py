@@ -3,6 +3,6 @@
 
 
 class MyList(list):
-    """Insatan"""
+    """Instantiating an inheritance."""
     def print_sorted(self):
         print(sorted(self))

@@ -6,7 +6,8 @@ import json
 """The JSON module."""
 
 def to_json_string(my_obj):
-    """Defines the representation of an obj.
+    """
+    Defines the JSON representation of an obj.
 
     Arguments:
         my_obj (str): The object to be represented.

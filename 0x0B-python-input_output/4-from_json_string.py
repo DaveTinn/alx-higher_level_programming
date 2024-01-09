@@ -5,6 +5,7 @@
 import json
 """The JSON module."""
 
+
 def from_json_string(my_str):
     """Defines the JSON string representation of an object.
     Aguments:

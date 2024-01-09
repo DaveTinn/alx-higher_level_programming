@@ -1,0 +1,39 @@
+The ``0.add_integer`` module
+============================
+
+Using the ``add_integer``
+-------------------------
+
+Import addition module:
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Tests an integer:
+	
+	>>> add_integer(2)
+	91
+
+Tests an integer and check default time:
+
+	>>> add_integer(0)
+	89
+
+Tests a float:
+
+	>>> add_integer(123.9)
+	245
+
+Tests a negative float:
+
+	>>> add_integer(-95.5)
+	-6
+
+Tests two integer value:
+
+	>>> add_integer(10, 5)
+	15
+
+Tests two large integer values:
+
+	>>> add_integer(9997272, 8626711)
+	18623983

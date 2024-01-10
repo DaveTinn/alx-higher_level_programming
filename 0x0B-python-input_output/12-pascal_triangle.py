@@ -7,11 +7,12 @@ def pascal_triangle(n):
         return []
     p_triangle = []
 
-    for idx in range(n):
-        row = [1] * (idx + 1)
+    while len(p_triangle) != n:
+        for idx in range(n):
+            row = [1] * (idx + 1)
 
-        for i in range(1, idx):
-            row[i] = p_triangle[idx - 1][i - 1] + p_triangle[idx - 1][i]
-        p_triangle.append(row)
+            for i in range(1, idx):
+                row[i] = p_triangle[idx - 1][i - 1] + p_triangle[idx - 1][i]
+            p_triangle.append(row)
 
     return p_triangle

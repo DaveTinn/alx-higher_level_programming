@@ -72,4 +72,14 @@ class Base:
         with open(filename, 'r', encoding='utf-8') as f:
             cls_str = f.read()
             list_instance = Base.from_json_string(cls_str)
-            return [cls.create(**l) for l in list_instance]
+            return [cls.create(**d) for d in list_instance]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list of of objects."""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        filename = '{}.csv'.format(cls.__name__)
+        if list_objs is not None:
+            with open(filename, 'r', newline='', encoding='utf-8') as f:
+                f.read(cls.save_to_file_csv(csv_file))

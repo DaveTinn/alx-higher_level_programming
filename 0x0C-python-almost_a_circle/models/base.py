@@ -111,3 +111,29 @@ class Base:
                          'x': row[2], 'y': row[3]}
                 my_obj.append(cls.create(**d))
         return my_obj
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        import turtle
+        import time
+        from random import randrange
+        turtle.Screen().colormode(255)
+        for idx in list_rectangles + list_squares:
+            my_turtle = turtle.Turtle()
+            my_turtle.color((randrange(255), randrange(255), randrange(255)))
+            my_turtle.pensize(1)
+            my_turtle.penup()
+            my_turtle.pendown()
+            my_turtle.setpos((idx.x + my_turtle.pos()[0], idx.y - my_turtle.pos()[1]))
+            my_turtle.pensize(10)
+            my_turtle.forward(idx.width)
+            my_turtle.left(90)
+            my_turtle.forward(idx.height)
+            my_turtle.left(90)
+            my_turtle.forward(idx.width)
+            my_turtle.left(90)
+            my_turtle.forward(idx.height)
+            my_turtle.left(90)
+            my_turtle.end_file()
+
+        time.sleep(5)

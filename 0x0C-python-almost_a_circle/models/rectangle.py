@@ -20,10 +20,10 @@ class Rectangle(Base):
             height: The height of the rectangle
         """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -69,14 +69,13 @@ class Rectangle(Base):
         self.setter_validator('y', value)
         self.__y = value
 
-    def setter_validator(self, name, value, eq=True):
-        if not isinstance(value, int):
+    def setter_validator(self, name, value, positive=True):
+        if type(value) != int:
             raise TypeError('{} must be an integer'.format(name))
-        if eq and value < 0:
-            raise ValueError('{} must be >= 0'.format(name))
-        elif not eq and value <= 0:
+        if not positive and value <= 0:
             raise ValueError('{} must be > 0'.format(name))
-
+        elif positive and value < 0:
+            raise ValueError('{} must be >= 0'.format(name))
     def area(self):
         """Defines the area of the class Rectangle"""
         return self.__width * self.__height

@@ -4,9 +4,10 @@ Python Interpreter
 
 The class module
 """
-
+from json import dumps, loads
 import json
-"""The JSON module"""
+import csv
+"""The CSV module."""
 
 
 class Base:
@@ -76,10 +77,37 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Serializes a list of of objects."""
+        """Serializes a list of objects."""
         from models.rectangle import Rectangle
         from models.square import Square
-        filename = '{}.csv'.format(cls.__name__)
         if list_objs is not None:
-            with open(filename, 'r', newline='', encoding='utf-8') as f:
-                f.read(cls.save_to_file_csv(csv_file))
+            if cls is Rectangle:
+                list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y]
+                             for obj in list_objs]
+            elif cls is Square:
+                list_objs = [[obj.id, obj.size, obj.x, obj.y]
+                             for obj in list_objs]
+        with open('{}.csv'.format(cls.__name__), 'w', newline='',
+                  encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes a list of objects"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        my_obj = []
+        with open('{}.csv'.format(cls.__name__), 'r', newline='',
+                  encoding='utf-8') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                row = [int(idx) for idx in row]
+                if cls is Rectangle:
+                    d = {'id': row[0], 'width': row[1], 'height': row[2],
+                         'x': row[3], 'y': row[4]}
+                else:
+                    d = {'id': row[0], 'size': row[1],
+                         'x': row[2], 'y': row[3]}
+                my_obj.append(cls.create(**d))
+        return my_obj

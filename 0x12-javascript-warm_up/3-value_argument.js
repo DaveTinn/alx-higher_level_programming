@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
-const firstArg = process.argv.length - 2;
+const firstArg = process.argv[2];
 
-if (firstArg === 0) {
+if (!firstArg) {
   console.log('No argument');
 } else {
-  console.log('School');
+  console.log(firstArg);
 }

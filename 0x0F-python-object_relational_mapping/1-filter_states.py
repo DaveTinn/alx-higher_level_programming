@@ -5,16 +5,21 @@ from sys import argv
 
 if __name__ == "__main__":
 
+    #  Creates a connection to MySQL database
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                          passwd=argv[2], db=argv[3])
 
+    # Creating the cursor object
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name\
-                LIKE BINARY 'N%' ORDER BY id ASC")
 
-    row = cur.fetchall()
-    for idx in row:
-        print(idx)
+    # Executes the SQL query to retreive state IDs and names starting with N
+    cur.execute("SELECT * FROM states WHERE name\
+                LIKE BINARY 'N%' ORDER BY id ASC LIMIT 28")
+
+    # Retrieves the results
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
 
     cur.close()
     db.close()

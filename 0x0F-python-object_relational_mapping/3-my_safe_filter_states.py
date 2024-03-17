@@ -18,7 +18,7 @@ if __name__ == "__main__":
     # Creates a cursor to execute the query
     cur = db.cursor()
     MySql_query = "SELECT * FROM states WHERE name \
-                    LIKE BINARY %s ORDER BY states.id ASC"
+                    LIKE BINARY %(name)s ORDER BY states.id ASC"
 
     cur.execute(MySql_query, (argv[4]))
 

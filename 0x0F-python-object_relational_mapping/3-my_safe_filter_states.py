@@ -26,8 +26,9 @@ if __name__ == "__main__":
     values = cur.fetchall()
 
     # Displays the values retrieved
-    for value in values:
-        print(value)
+    if values is None:
+        for value in values:
+            print(value)
 
     # Close the database and cursor connection
     db.close()

@@ -1,7 +1,14 @@
 #!/usr/bin/python3
+"""
+A script that lists all states
+with a name starting with N (upper N)
+from the database hbtn_0e_0_usa.
+"""
+
 
 import MySQLdb
 from sys import argv
+
 
 if __name__ == "__main__":
 
@@ -14,7 +21,7 @@ if __name__ == "__main__":
 
     # Executes the SQL query to retreive state IDs and names starting with N
     cur.execute("SELECT * FROM states WHERE name\
-                LIKE BINARY 'N%' ORDER BY id ASC LIMIT 28")
+                LIKE BINARY 'N%' ORDER BY id ASC")
 
     # Retrieves the results
     rows = cur.fetchall()

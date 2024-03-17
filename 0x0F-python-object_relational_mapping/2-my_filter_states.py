@@ -6,6 +6,7 @@ table 'states' of a database 'hbtn_0e_0_usa'
 where 'name' matches the argument.
 """
 
+
 import MySQLdb
 from sys import argv
 
@@ -18,7 +19,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT * FROM states \
                  WHERE name LIKE BINARY '{}' \
-                 ORDER BY states.id ASC LIMIT 1".format(argv[4]))
+                 ORDER BY states.id ASC".format(argv[4]))
 
     rows = cur.fetchall()
 

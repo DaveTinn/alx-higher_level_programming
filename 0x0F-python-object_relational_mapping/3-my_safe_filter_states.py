@@ -37,7 +37,5 @@ if __name__ == "__main__":
     if values is None:
         for value in values:
             print(value)
-
-    # Close the database and cursor connection
-    cur.close()
+    # Close the database connection
     db.close()

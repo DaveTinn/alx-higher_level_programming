@@ -27,7 +27,7 @@ if __name__ == "__main__":
     """Creats a session."""
     session = Session()
 
-    """Queries the state obejcts that contain letter 'a' in the database."""
+    """Queries the state objects that contain letter 'a' in the database."""
     state_filter_a = session.query(State).filter(State.name.contains('a'))
 
     """Prints the State objects containg 'a'."""

@@ -33,8 +33,7 @@ if __name__ == "__main__":
         # Retrieves the values in the table
         values = cur.fetchall()
 
-    # Displays the values retrieved
-    if values is None:
+        # Displays the values retrieved
         for value in values:
             print(value)
     # Close the database connection

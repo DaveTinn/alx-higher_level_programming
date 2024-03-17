@@ -27,7 +27,7 @@ if __name__ == "__main__":
     session = Session()
 
     """Query all the State objects in order by states.id."""
-    states = session.query(State).order_by(State.id).limit(5).all()
+    states = session.query(State).order_by(State.id)
 
     # Prints the retrieved state objects
     for state in states:

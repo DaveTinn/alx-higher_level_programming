@@ -16,11 +16,20 @@ if __name__ == "__main__":
                          user=argv[1], passwd=argv[2], db=argv[3])
 
     # Creates a cursor to execute the query
-    cur = db.cursor()
-    MySql_query = "SELECT * FROM states WHERE name \
-                    LIKE BINARY %(name)s ORDER BY states.id ASC"
-
-    cur.execute(MySql_query, (argv[4]))
+    with db.cursor() as cur:
+        # Executes the query
+        cur.execute("""
+            SELECT
+                *
+            FROM
+                states
+            WHERE
+                name LIKE BINARY %(name)s
+            ORDER BY
+                states.id ASC
+        """, {
+            'name': argv[4]
+        })
 
     # Retrieves the values in the table
     values = cur.fetchall()

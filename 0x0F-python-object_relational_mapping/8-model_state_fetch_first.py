@@ -14,7 +14,7 @@ from sys import argv
 
 if __name__ == "__main__":
     """Constructs the database URI."""
-    db_uri = 'mysql+mysqldb:{}//@loaclhost:3306/{}'.format(
+    db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
                 argv[1], argv[2], argv[3])
 
     """Creates the SQLAlchemy engine."""
@@ -26,8 +26,8 @@ if __name__ == "__main__":
     """Creates a session."""
     session = Session()
 
-    """Query the State objects in order by states.id."""
-    states = session.query(State).order_by(states.id).first()
+    """Query the first State object, order by states.id."""
+    state = session.query(State).order_by(State.id).first()
 
     """Prints the first State object from the database."""
     if state is None:

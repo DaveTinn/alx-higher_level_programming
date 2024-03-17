@@ -30,9 +30,8 @@ if __name__ == "__main__":
         """, {
             'name': argv[4]
         })
-
-    # Retrieves the values in the table
-    values = cur.fetchall()
+        # Retrieves the values in the table
+        values = cur.fetchall()
 
     # Displays the values retrieved
     if values is None:
@@ -40,5 +39,5 @@ if __name__ == "__main__":
             print(value)
 
     # Close the database and cursor connection
-    db.close()
     cur.close()
+    db.close()

@@ -5,7 +5,7 @@ the class definition of a City.
 """
 
 
-from model_state import Base
+from relationship_state import Base, State
 from sqlalchemy import Column, String, Integer, ForeignKey
 
 
@@ -19,6 +19,7 @@ class City(Base):
         state_id (int): The id (Foreign key) of the state.
     """
     __tablename__ = 'cities'
+
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)

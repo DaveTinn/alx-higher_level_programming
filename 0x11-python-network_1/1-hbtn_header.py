@@ -7,11 +7,8 @@ in the header response.
 """
 
 
-
 from sys import argv
 import urllib.request
-
-
 
 if __name__ == "__main__":
     req = urllib.request.Request(argv[1])

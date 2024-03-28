@@ -12,7 +12,7 @@ from sys import argv
 if __name__ == "__main__":
     resp = requests.get(argv[1])
     status_code = resp.status_code
-    if status_code >= 400:
+    if status_code > 400:
         print('Error code: {}'.format(status_code))
     else:
         print('{}'.format(r.text))

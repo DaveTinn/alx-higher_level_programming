@@ -4,7 +4,10 @@ A Python script that fetches https://alx-intranet.hbtn.io/status.
 """
 
 
-import requests
+from requests import get
 
-
-
+if __name__ == "__main__":
+    r = get('https://alx-intranet.hbtn.io/status')
+    print('Body response:')
+    print('\t- type: {}'.format(type(r.text)))
+    print('\t- content: {}'.format(r.text))

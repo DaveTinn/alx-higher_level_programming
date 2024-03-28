@@ -5,7 +5,7 @@ No other packages should be imported except 'urllib'.
 """
 
 
-import urllib.request
+from urllib import request
 with request.urlopen('https://alx-intranet.hbtn.io/status') as response:
     html = response.read()
     print('Body response:')

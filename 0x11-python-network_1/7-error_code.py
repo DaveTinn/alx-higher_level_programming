@@ -15,4 +15,4 @@ if __name__ == "__main__":
     if status_code > 400:
         print('Error code: {}'.format(status_code))
     else:
-        print('{}'.format(r.text))
+        print(resp.text)
